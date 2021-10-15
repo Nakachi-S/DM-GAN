@@ -288,12 +288,12 @@ def weights_init(m):
     # xavier_uniform_(
     classname = m.__class__.__name__
     if classname.find('Conv') != -1:
-        #print(m.state_dict().keys())
-        if m.state_dict().keys()[0] == 'weight':
-            nn.init.orthogonal_(m.weight.data, 1.0)
-        elif m.state_dict().keys()[3] == 'weight_bar':
-            nn.init.orthogonal_(m.weight_bar.data, 1.0)
-        #nn.init.orthogonal(m.weight.data, 1.0)
+        # print(m.state_dict().keys())
+        # if m.state_dict().keys()[0] == 'weight':
+        #     nn.init.orthogonal_(m.weight.data, 1.0)
+        # elif m.state_dict().keys()[3] == 'weight_bar':
+        #     nn.init.orthogonal_(m.weight_bar.data, 1.0)
+        nn.init.orthogonal_(m.weight.data, 1.0)
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
