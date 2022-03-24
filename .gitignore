@@ -1,0 +1,8 @@
+output
+code/*.pyc
+code/miscc/*.pyc
+.DS_Store
+.ipynb_checkpoints/
+data/
+__pycache__/
+eval/FID/coco_val.npz
